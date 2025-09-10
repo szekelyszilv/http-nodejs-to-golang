@@ -1,0 +1,27 @@
+{
+  "name": "http-nodejs-to-golang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "npm run build:gohandler && npm run build:napi && npm run build:typescript",
+    "build:gohandler": "go build -buildmode=c-archive -o napi/gohandler/src/golib/ ./cmd/gohandler",
+    "build:napi": "cd napi/gohandler && npm run build",
+    "build:typescript": "tsc",
+    "dev": "ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "gohandler": "file:napi/gohandler"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.23",
+    "@types/node": "^24.3.1",
+    "node-gyp": "^11.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "gohandler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/Release/gohandler.node",
+  "types": "main.d.ts",
+  "scripts": {
+    "build": "npx node-gyp configure build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "node-addon-api": "^8.5.0",
+    "node-gyp": "^11.4.2",
+    "typescript": "^5.9.2"
+  }
+}
